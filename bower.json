@@ -1,0 +1,20 @@
+{
+  "name": "angular-multi-modules",
+  "version": "0.0.0",
+  "homepage": "https://github.com/EdisonSu768/angular-multi-modules",
+  "authors": [
+    "Edison Su <edison.su@trantect.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "monitorcard": "~0.0.1"
+  }
+}
