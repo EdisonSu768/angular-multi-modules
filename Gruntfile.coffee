@@ -1,32 +1,36 @@
+jade = require 'jade'
+
 module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-copy'
-  grunt.loadNpmTasks 'grunt-contrib-jade'
   grunt.loadNpmTasks 'grunt-shell'
+  grunt.loadNpmTasks 'grunt-contrib-jade'
 
   grunt.initConfig
     coffee:
       frontend:
         options:
           sourceMap: true
-          files: [
-            expand: true
-            cwd: "./app/coffee"
-            dest: "build/js"
-            src: [
-              "**/*.coffee"
-            ]
-            ext: ".js"
+        files: [
+          expand: true
+          cwd: "./app/coffee"
+          dest: "build/js"
+          src: [
+            "**/*.coffee"
           ]
+          ext: ".js"
+        ]
 
     jade:
-      compile:
+      frontend:
         options:
+          pretty: true
           data:
-            debug:false
+            debug: false
         files:
-          "build/html": ["app/view/*.jade"]
+          "build/html/layout.html": ["app/view/*.jade"]
+
 
   grunt.registerTask 'compile',
-    ['coffee:frontend']
+    ['coffee:frontend','jade:frontend']

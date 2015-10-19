@@ -1,0 +1,16 @@
+script(type='text/javascript' src='/bower_components/angular/angular.min.js')
+script(type='text/javascript' src='/bower_components/ng-module/ng-module.js')
+script(type='text/javascript' src='/build/js/menu.js')
+
+header(id="one" ng-controller="MyControllerA") Module A {{name}}
+div
+  div(id="two")
+    h1 Module B
+    div(ng-controller="MyControllerB") {{name}}
+  div(ng-app='MyModuleC')
+    h1 Module C
+    div(ng-controller='MyControllerC') {{name}}
+
+p --------------------------------------
+
+
